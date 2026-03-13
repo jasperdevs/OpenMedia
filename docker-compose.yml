@@ -1,0 +1,13 @@
+services:
+  forge:
+    build: .
+    ports:
+      - "9099:3000"
+    volumes:
+      - forge-data:/app/data
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+
+volumes:
+  forge-data:
